@@ -3,17 +3,22 @@ const IS_FULL_TIME = 2;
 const PART_TIME_HOURS = 4;
 const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
-let workingHours;    
-    let ramdomValue = Math.floor(Math.random() * 10) % 3;
-    switch (ramdomValue) {
-        case IS_FULL_TIME:
-            workingHours = FULL_TIME_HOURS;
-            break;
-        case IS_PART_TIME:
-            workingHours = PART_TIME_HOURS
-            break;
-        default:
-            workingHours = 0;
+const WORKING_DAYS_PER_MONTH = 20;
+    let workingHours = 0;
+    let day = 1;
+    while (day <= WORKING_DAYS_PER_MONTH) {
+        let ramdomValue = Math.floor(Math.random() * 10) % 3;
+        switch (ramdomValue) {
+            case IS_FULL_TIME:
+                workingHours += FULL_TIME_HOURS;
+                break;
+            case IS_PART_TIME:
+                workingHours += PART_TIME_HOURS
+                break;
+            default:
+                workingHours += 0;
+        }
+        day++;
     }
-    console.log("Employee Total Working hours : "+workingHours);
-    console.log("Employee wage per day : " + workingHours * WAGE_PER_HOUR);
+    console.log("Total Working hours of Employee For month : " + workingHours);
+    console.log("Employee Total wage per month : " + workingHours * WAGE_PER_HOUR);
