@@ -4,9 +4,13 @@ const PART_TIME_HOURS = 4;
 const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
 const WORKING_DAYS_PER_MONTH = 20;
+    /**
+     * method to calculate Employee Wage
+     */
     let workingHours = 0;
+    let workingHoursInMonth = 160;
     let day = 1;
-    while (day <= WORKING_DAYS_PER_MONTH) {
+    while (day <= WORKING_DAYS_PER_MONTH && workingHours <= workingHoursInMonth) {
         let ramdomValue = Math.floor(Math.random() * 10) % 3;
         switch (ramdomValue) {
             case IS_FULL_TIME:
@@ -20,5 +24,5 @@ const WORKING_DAYS_PER_MONTH = 20;
         }
         day++;
     }
-    console.log("Total Working hours of Employee For month : " + workingHours);
+    console.log("Employee Working hours in month : " + workingHours);
     console.log("Employee Total wage per month : " + workingHours * WAGE_PER_HOUR);
